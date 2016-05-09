@@ -21,6 +21,7 @@ find_jupyter <- function() {
 #' @param displayname The name which is displayed in the notebook (default: "R")
 #'
 #' @export
+
 installspec <- function(user = TRUE, name = 'ir', displayname = 'R') {
     jupyter <- find_jupyter()
     if (is.null(jupyter))
@@ -35,7 +36,8 @@ installspec <- function(user = TRUE, name = 'ir', displayname = 'R') {
     file.copy(srcdir, tmp_name, recursive = TRUE)
     spec_path <- file.path(tmp_name, 'kernelspec', 'kernel.json')
     spec <- fromJSON(spec_path)
-    spec$argv[[1]] <- file.path(R.home('bin'), 'R')
+	spec$argv[[1]] <- '/home/ubuntu/anaconda2/lib/R/bin/R'
+    #spec$argv[[1]] <- file.path(R.home('bin'), 'R')
     spec$display_name <- displayname
     write(toJSON(spec, pretty = TRUE, auto_unbox = TRUE), file = spec_path)
 
