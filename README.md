@@ -3,6 +3,8 @@
 [Build Status]: https://travis-ci.org/IRkernel/IRkernel.svg?branch=master
 [Travis]: https://travis-ci.org/IRkernel/IRkernel
 
+Changed R library folderto run with R essentials library from anaconda. 
+
 For detailed requirements and install instructions see [irkernel.github.io](http://irkernel.github.io/)
 
 ## Requirements
